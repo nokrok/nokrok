@@ -121,8 +121,8 @@ async function openPost() {
 
     }
 
-    window.location.href =
-      `post.html?id=${selectedItemId}&password=${encodeURIComponent(password)}`;
+   sessionStorage.setItem("postPassword", password);
+window.location.href = `post.html?id=${selectedItemId}`;
 
   } catch (e) {
 
