@@ -1,0 +1,74 @@
+
+
+@font-face {
+  font-family: 'MaruBuri';
+  src: url('fonts/MaruBuri-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  background: #ebe6e2;
+  color: #1d1d1d;
+  font-family: 'MaruBuri', serif;
+}
+
+.page{
+    width:900px;
+    margin:80px auto;
+}
+
+.back:hover{
+    opacity:.6;
+}
+
+h1{
+    font-size:35px;
+    font-weight:400;
+    letter-spacing:-1px;
+    margin-top:40px;
+    margin-bottom:14px;
+}
+
+.info{
+    font-size:18px;
+    color:#3d563c;
+    margin-bottom:90px;
+}
+
+.cover{
+    display:block;
+    width:360px;
+    margin:0 auto;
+    transform:rotate(-2deg);
+    box-shadow:12px 12px 0 #111;
+}
+
+.meta{
+    text-align:center;
+    margin-top:45px;
+    font-size:18px;
+    color:#444;
+}
+
+hr{
+    border:none;
+    border-top:1px solid #999;
+    margin:70px 0;
+}
+
+.review{
+    max-width:820px;
+    margin:0 auto;
+    font-size:25px;
+    line-height:2;
+        font-family:'MaruBuri', serif;
+    font-weight:400;
+}
+
+.review p{
+    margin-bottom:35px;
+}
+
+</style>
