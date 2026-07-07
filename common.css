@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "Header_2";
+  src: url("fonts/Header_2.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MaruBuri";
+  src: url("fonts/MaruBuri-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MaruBuri";
+  src: url("fonts/MaruBuri-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #111;
+  font-family: Arial, sans-serif;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===========================
+   공통 헤더 (board와 동일)
+=========================== */
+
+.site-header {
+  width: 100%;
+  padding: 42px 54px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  text-decoration: none;
+  color: #111;
+  font-family: "Header_2", sans-serif;
+  font-size: 28px;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+.site-nav {
+  display: flex;
+  gap: 54px;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #111;
+  font-family: "Header_2", sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  transition: opacity .2s;
+}
+
+.site-nav a:hover {
+  opacity: .6;
+}
