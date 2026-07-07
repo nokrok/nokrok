@@ -1,0 +1,55 @@
+body{
+    background:#ece8e7;
+    color:#0b2fa8;
+    font-family:'MaruBuri', serif;
+}
+
+.write-wrap{
+    width:620px;
+    margin:180px auto;
+}
+
+.seat-label{
+    color:#5d6b5e;
+    letter-spacing:4px;
+    margin-bottom:25px;
+}
+
+h1{
+    font-size:48px;
+    font-weight:400;
+    color:#0b2fa8;
+    margin-bottom:55px;
+}
+
+.write-form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.write-form input,
+.write-form textarea{
+    width:100%;
+    border:1px solid rgba(45,79,46,.3);
+    background:rgba(255,255,255,.25);
+    padding:16px;
+    font-family:'MaruBuri', serif;
+    font-size:15px;
+    color:#2d4f2e;
+}
+
+.write-form textarea{
+    height:180px;
+    resize:none;
+}
+
+.write-form button{
+    margin-top:12px;
+    padding:15px;
+    border:1px solid #2d4f2e;
+    background:#2d4f2e;
+    color:#ece8e7;
+    font-family:'MaruBuri', serif;
+    cursor:pointer;
+}
