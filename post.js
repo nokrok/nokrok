@@ -13,24 +13,24 @@ const itemNames = {
   "010": "010 mp3"
 };
 
-const params = new URLSearchParams(location.search);
+const params = new URLSearchParams(window.location.search);
 
 const id = params.get("id");
 const password = params.get("password");
 
-document.getElementById("itemTitle").textContent =
-  itemNames[id] || "unknown item";
+const itemTitle = document.getElementById("itemTitle");
+const postText = document.getElementById("postText");
 
-if (!password) {
-  location.href = "board.html";
+itemTitle.textContent = itemNames[id] || "unknown item";
+
+if (!id || !password) {
+  window.location.href = "board.html";
 }
 
-load();
+loadPost();
 
-async function load() {
-
+async function loadPost() {
   try {
-
     const response = await fetch(
       `${API_URL}?action=read&itemId=${encodeURIComponent(id)}&password=${encodeURIComponent(password)}`
     );
@@ -39,26 +39,21 @@ async function load() {
 
     if (!result.ok) {
       alert("wrong password");
-      location.href = "board.html";
+      window.location.href = "board.html";
       return;
     }
 
     const post = result.post;
 
-    document.getElementById("postText").textContent =
+    postText.textContent =
 `${post.title}
 
 from. ${post.name}
 
 ${post.message}`;
 
-  } catch (err) {
-
-    console.error(err);
-
-    document.getElementById("postText").textContent =
-      "게시글을 불러오지 못했습니다.";
-
+  } catch (error) {
+    console.error(error);
+    postText.textContent = "게시글을 불러오지 못했습니다.";
   }
-
 }
