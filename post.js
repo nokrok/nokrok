@@ -1,64 +1,71 @@
 const API_URL = "https://script.google.com/macros/s/AKfycbylNf4C-lGPTj3azmJhqzXAMRrev-5YkFHyzSomg0hmG5WXHzXeNpVlb85WHJLcxVt7/exec";
 
 const itemNames = {
-  "001": "001 portrait",
-  "002": "002 camera",
-  "003": "003 postcard",
-  "004": "004 spider",
-  "005": "005 pineapple",
-  "006": "006 beer girl",
-  "007": "007 red shoes",
-  "008": "008 white ferret",
-  "009": "009 rock",
-  "010": "010 mp3"
+  "001":"001 portrait",
+  "002":"002 camera",
+  "003":"003 postcard",
+  "004":"004 spider",
+  "005":"005 pineapple",
+  "006":"006 beer girl",
+  "007":"007 red shoes",
+  "008":"008 white ferret",
+  "009":"009 rock",
+  "010":"010 mp3"
 };
 
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+const params = new URLSearchParams(location.search);
 
-const itemTitle = document.getElementById("itemTitle");
-const postText = document.getElementById("postText");
+const id=params.get("id");
 
-itemTitle.textContent = itemNames[id] || "unknown item";
+document.getElementById("itemTitle").textContent=itemNames[id];
 
-async function loadPost() {
-  if (!id) {
-    postText.textContent = "잘못된 접근입니다.";
-    return;
-  }
+const password=sessionStorage.getItem("postPassword");
 
-  const password = sessionStorage.getItem("postPassword");
+if(!password){
 
-  if (!password) {
-    postText.textContent = "비밀번호 확인이 필요합니다.";
-    return;
-  }
+    location.href="board.html";
 
-  try {
-    const response = await fetch(
-      `${API_URL}?action=read&itemId=${encodeURIComponent(id)}&password=${encodeURIComponent(password)}`
-    );
-
-    const result = await response.json();
-
-    if (!result.ok) {
-      postText.textContent = "비밀번호가 틀렸거나 게시글을 불러올 수 없습니다.";
-      return;
-    }
-
-    const data = result.post;
-
-    postText.textContent =
-`${data.title}
-
-from. ${data.name}
-
-${data.message}`;
-
-  } catch (error) {
-    console.error(error);
-    postText.textContent = "게시글을 불러오는 중 오류가 발생했습니다.";
-  }
 }
 
-loadPost();
+load();
+
+async function load(){
+
+    try{
+
+        const response=await fetch(
+`${API_URL}?action=read&itemId=${id}&password=${encodeURIComponent(password)}`
+);
+
+        const result=await response.json();
+
+        if(!result.ok){
+
+            alert("비밀번호가 틀렸습니다.");
+
+            location.href="board.html";
+
+            return;
+
+        }
+
+        const post=result.post;
+
+        document.getElementById("postText").textContent=
+`${post.title}
+
+from. ${post.name}
+
+${post.message}`;
+
+    }
+
+    catch(err){
+
+        console.error(err);
+
+        document.getElementById("postText").textContent="오류가 발생했습니다.";
+
+    }
+
+}
