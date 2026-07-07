@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self';
+    connect-src 'self' https://script.google.com https://script.googleusercontent.com;
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data: blob:;
+    font-src 'self' data:;
+  ">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>write.</title>
+
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="write.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <a href="/" class="site-logo">nokrok*</a>
+
+  <nav class="site-nav">
+    <a href="/about">about</a>
+    <a href="/book">books</a>
+    <a href="/music">music</a>
+    <a href="/work">work</a>
+    <a href="/diary">diary</a>
+    <a href="/board">board</a>
+  </nav>
+</header>
+
+<main class="write-wrap">
+  <p class="item-label" id="itemLabel">001 portrait</p>
+  <h1>leave your note.</h1>
+
+  <form class="write-form" id="writeForm">
+    <input type="text" id="name" placeholder="name" required>
+
+    <input type="password" id="password" placeholder="password" required>
+
+    <input type="text" id="title" placeholder="title" required>
+
+    <textarea id="message" placeholder="message" required></textarea>
+
+    <button type="submit">send</button>
+  </form>
+</main>
+
+<script src="write.js"></script>
+
+</body>
+</html>
