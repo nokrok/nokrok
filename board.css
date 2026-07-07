@@ -187,22 +187,29 @@ nav a{
 /* ---------------- TAPE ---------------- */
 
 .item.has-post{
-  z-index:50;
+    z-index:50;
 }
 
 .item.has-post::before{
-  content:"";
-  position:absolute;
-  width:130px;
-  height:65px;
-  top:-34px;
-  left:50%;
-  transform:translateX(-50%) rotate(-6deg);
-  background:url("images/tape01.png") center/contain no-repeat;
-  z-index:999;
-  pointer-events:none;
-}
+    content:"";
+    position:absolute;
 
+    width:330px;
+    height:280px;
+
+    top:-18px;
+    left:50%;
+
+    transform:translateX(-50%) rotate(-3deg);
+
+    background-image:url("images/tape01.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+
+    z-index:999;
+    pointer-events:none;
+}
 /* ---------------- PASSWORD MODAL ---------------- */
 
 .password-modal{
