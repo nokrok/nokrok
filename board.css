@@ -280,3 +280,19 @@ nav a {
   margin-top: 12px;
   font-size: 13px;
 }
+.item{
+  position:relative;
+}
+
+.item.has-post::before{
+  content:"";
+  position:absolute;
+  top:-22px;
+  left:50%;
+  width:95px;
+  height:42px;
+  background:url("images/tape01.png") center/contain no-repeat;
+  transform:translateX(-50%) rotate(-5deg);
+  z-index:5;
+  pointer-events:none;
+}
