@@ -1,0 +1,63 @@
+.page{
+    width:1100px;
+    margin:0 auto;
+    padding-top:120px;
+}
+
+h1{
+    font-family:"Header_2", sans-serif;
+    font-size:68px;
+    font-weight:normal;
+    color:#111;
+    margin-bottom:60px;
+}
+
+.song{
+    display:grid;
+    grid-template-columns:260px 1fr;
+    gap:80px;
+    align-items:center;
+
+    padding:55px 0;
+    border-bottom:1px solid rgba(11,47,168,0.25);
+}
+
+.album{
+    width:230px;
+    height:230px;
+    object-fit:cover;
+}
+
+.text h2{
+    font-family:'MaruBuri', serif;
+    font-size:28px;
+    font-weight:400;
+    color:#111;
+    margin-bottom:30px;
+}
+
+.text h2 span{
+    font-size:18px;
+    margin-left:10px;
+    color:#111;
+}
+
+.text p{
+    font-family:'MaruBuri', serif;
+    font-size:16px;
+    line-height:1.8;
+    color:#111;
+
+    margin-top:40px;
+    margin-bottom:40px;
+}
+
+.spotify-player{
+    width:340px;
+    margin-top:55px;
+}
+
+.spotify-player iframe{
+    width:100%;
+    display:block;
+}
